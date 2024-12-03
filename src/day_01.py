@@ -5,10 +5,9 @@ def parse(lines):
     return zip(*[map(int, line.split("   ")) for line in lines])
 
 
-def part_1(left_list, right_list):
-    return sum(abs(right - left) for left, right in zip(sorted(left_list), sorted(right_list)))
+def part_1(list_1, list_2):
+    return sum(abs(loc_id_1 - loc_id_2) for loc_id_1, loc_id_2 in zip(sorted(list_1), sorted(list_2)))
 
 
-def part_2(left_list, right_list):
-    right_counts = Counter(right_list)
-    return sum(left * right_counts[left] for left in left_list)
+def part_2(list_1, list_2):
+    return sum(loc_id_1 * Counter(list_2)[loc_id_1] for loc_id_1 in list_1)

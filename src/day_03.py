@@ -2,7 +2,7 @@ import re
 from enum import StrEnum
 
 
-class Operator(StrEnum):
+class Conditional(StrEnum):
     DO = "do"
     DONT = "don't"
 
@@ -18,9 +18,9 @@ def find_mul_pairs(corrupted_memory, conditional=False):
     data = re.findall(r"(do|don't)\(\)|mul\((\d{1,3}),(\d{1,3})\)", corrupted_memory)
     mul_pairs = []
     for flag, n, m in data:
-        if flag == Operator.DO:
+        if flag == Conditional.DO:
             conditional = True
-        elif flag == Operator.DONT:
+        elif flag == Conditional.DONT:
             conditional = False
         if conditional and n and m:
             mul_pairs.append((n, m))

@@ -31,8 +31,7 @@ def is_match(word_search, current_pos, dir, target_word):
 
 def part_1(word_search, target_word="XMAS", dirs=DIRS):
     count = 0
-    rows = len(word_search)
-    cols = len(word_search[0])
+    rows, cols = len(word_search), len(word_search[0])
 
     for r in range(rows):
         for c in range(cols):
@@ -44,8 +43,7 @@ def part_1(word_search, target_word="XMAS", dirs=DIRS):
 
 def part_2(word_search, target_word="MAS", dirs=DIRS[2:]):
     count = 0
-    rows = len(word_search)
-    cols = len(word_search[0])
+    rows, cols = len(word_search), len(word_search[0])
 
     for r in range(rows):
         for c in range(cols):

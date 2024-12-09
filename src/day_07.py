@@ -35,6 +35,6 @@ def part_1(equations):
     return valid_target_sum(equations, (mul, add))
 
 
-def part_2(data):
-    return valid_target_sum(data, (concat, mul, add))
+def part_2(equations):
+    return valid_target_sum(equations, (concat, mul, add))
 
